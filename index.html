@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css" /> -->
+    <title>Finnal Project</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      function runjQuery() {
+        $.ajax({
+          //setup parameters
+          url: "final.php",
+          data: "onload=0",
+          success: function (serverdata) {
+            $("#info").html(serverdata);
+          },
+        });
+      }
+    </script>
+  </head>
+
+  <body onload="runjQuery();">
+    <header>
+      <h1>NBA Data</h1>
+    </header>
+    <main>
+      <section>
+        <h3><a href="final.php?key=1">1. Display All the Information</a></h3>
+        <h3><a href="final.php?key=2">2. Display Top 5 Oldest Teams</a></h3>
+        <h3>
+          <a href="final.php?key=3">
+            3. Display the Top 5 Most Recently Founded Teams
+          </a>
+        </h3>
+        <span id="info"></span>
+      </section>
+    </main>
+  </body>
+</html>
